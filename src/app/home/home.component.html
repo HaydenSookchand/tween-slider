@@ -1,12 +1,8 @@
-
-
-
-
-    <div  class="home" (window:resize)="handleResize();">
+    <div  class="home" (window:resize)="handleWindowResize();">
         <div *ngFor="let profileData of this.profileData" id="{{profileData.id}}"  class="{{profileData.class}} {{profileData.color}} ">
             <div class="text-wrapper">
-            <div class="{{profileData.textSize}}"> {{profileData.text}}</div>
-            <div class="{{profileData.textSize2}}">{{profileData.text2}} </div>
+            <div class="text {{profileData.textSize}}"> {{profileData.text}}</div>
+            <div class="text {{profileData.textSize2}}">{{profileData.text2}} </div>
             </div>
         </div>
     </div>

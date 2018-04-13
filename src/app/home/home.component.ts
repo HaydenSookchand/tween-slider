@@ -13,11 +13,15 @@ export class HomeComponent {
   textAnimation: Object;
   items: Array<Object>
   profileData: Object;
+  xTo: Number;
+  yTo: Number;
+  xEnd: Number;
+  xPer: Number;
 
   constructor(public http: HttpClient) { }
 
   ngOnInit(): void {
-    // get data - maybe use a service?
+
     this.http.get('./assets/configs/home.json').subscribe(data => {
       this.profileData = data;
     });
@@ -32,6 +36,7 @@ export class HomeComponent {
   init() {
     this.bindToElements();
     this.setUpAnimations();
+    //this.someCalculations();
     this.playAnimations();
   }
 
@@ -42,38 +47,107 @@ export class HomeComponent {
   }
 
   createSlideBindings(this) {
-    // This reads tha amount of items in the json file to determine how many items to map 2 instead of manually having to enter code 
-    //this.items1 = document.getElementById("slide-1");
-    //this.items2 = document.getElementById("slide-2");
     this.items = [];
-    for (var b = 0; b < this.profileData.length; b++) {
-      this.items[b] = document.getElementById(this.profileData[b].id);
+    for (var configItem = 0; configItem < this.profileData.length; configItem++) {
+      this.items[configItem] = document.getElementById(this.profileData[configItem].id);
     }
   }
 
   setUpAnimations() {
-    this.textAnimation = new TimelineMax({ repeat: 0 });
+    this.textAnimation = new TimelineMax({ repeat: -1 });
   }
 
   /** ***************************** Play Animations ***************************************************/
 
   playAnimations(this) {
-    this.x = this.getMiddleX();
     this.playSlideAnimations();
   }
 
+
   playSlideAnimations(this) {
-    for (var a = 0; a < this.items.length; a++) {
-      this.textAnimation.fromTo(this.items[a], 1, { opacity: 0, x: 0, xPercent: -50 }, { opacity: 1, x: this.x, xPercent: -50 });
-      this.textAnimation.to(this.items[a], 1, { opacity: 0, x: window.innerWidth - 150 }, "+=3");
+    for (var itemCounter = 0; itemCounter < this.items.length; itemCounter++) {
+      this.count = itemCounter;
+      this.validateAnimations(this, this.profileData[this.count]);
+      this.xPercent = -50
+      this.textAnimation.fromTo(this.items[itemCounter], 1, { opacity: 0, x: 0, y: 0, xPercent: this.xPercent }, { opacity: 1, x: this.firstAnimEndX, y: this.firstAnimEndY, xPercent: this.xPercent });
+      this.textAnimation.to(this.items[itemCounter], 1, { opacity: 0, x: this.secondAnimEndX, y: this.secondAnimEndY, }, this.profileData[itemCounter].timeToFade);
     }
+  }
+
+
+
+  /** ***************************** Reset Animations ***************************************************/
+  validateAnimations(this) {
+
+    // This needs to be sorted out 
+
+    this.firstAnimEndX = this.profileData[this.count].firstAnimEndX;
+    if (this.firstAnimEndX != undefined) {
+      switch (this.firstAnimEndX) {
+        default:
+          this.firstAnimEndX = this.profileData[this.count].firstAnimEndX;
+          break;
+        case "center":
+          this.firstAnimEndX = this.getXCenter();
+          break;
+        case "end":
+          this.firstAnimEndX = this.getXEnd();
+      }
+    }
+
+
+    this.firstAnimEndY = this.profileData[this.count].firstAnimEndY;
+    if (this.firstAnimEndY != undefined) {
+      switch (this.firstAnimEndY) {
+        default:
+          this.firstAnimEndY = this.profileData[this.count].firstAnimEndY;
+          break;
+        case "center":
+          this.firstAnimEndY = this.getYCenter();
+          break;
+        case "end":
+          this.firstAnimEndY = this.getYEnd();
+      }
+    }
+
+
+    this.secondAnimEndX = this.profileData[this.count].secondAnimEndX;
+    if (this.secondAnimEndX != undefined) {
+      switch (this.secondAnimEndX) {
+        default:
+          this.secondAnimEndX= this.profileData[this.count].secondAnimEndX;
+          break;
+        case "center":
+          this.secondAnimEndX = this.getXCenter();
+          break;
+        case "end":
+          this.secondAnimEndX = this.getXEnd();
+      }
+    }
+
+
+
+    this.secondAnimEndY = this.profileData[this.count].secondAnimEndY;
+    if (this.secondAnimEndY != undefined) {
+      switch (this.secondAnimEndY) {
+        default:
+          this.secondAnimEndY = this.profileData[this.count].secondAnimEndY;
+          break;
+        case "center":
+          this.secondAnimEndY = this.getYCenter();
+          break;
+        case "end":
+          this.secondAnimEndY = this.getYEnd();
+      }
+    }
+
   }
 
   /** ***************************** Reset Animations ***************************************************/
 
   resetSlideAnimations(this) {
-    for (var a = 0; a < this.items.length; a++) {
-      this.textAnimation.to(this.items[a], 0.1, { opacity: 0, x: 0, xPercent: -50 });
+    for (var currentItem = 0; currentItem < this.items.length; currentItem++) {
+      this.textAnimation.to(this.items[currentItem], 0.1, { opacity: 0, x: 0, xPercent: this.xPercent });
     }
   }
 
@@ -83,21 +157,31 @@ export class HomeComponent {
 
   /** ***************************** Reset Animations ***************************************************/
 
-  // Handle Click on replay
-  handleReplay(this) {
-    this.playAnimations(this);
-  }
-
-  // Handle Window Resize
-  handleResize(this) {
+  handleWindowResize(this) {
     this.textAnimation.totalProgress(1).kill();
     this.resetAnimations();
     this.playAnimations(this);
   }
 
-  // Get the correct X value - like to move this out into a co-ordinate class
-  getMiddleX(this) {
+  // Get the point we want the first X to tween to (First Animation X End)
+  getXCenter(this) {
     return window.innerWidth / 2;
   }
+
+  // Get the point we want the first X to tween to (First Animation X End)
+  getYCenter(this) {
+    return 0;
+  }
+
+
+  // Second Animation X End
+  getXEnd(this) {
+    return window.innerWidth - 150;
+  }
+    // Second Animation X End
+ getYEnd(this) {
+      return window.innerHeight;
+  }
+
 }
 

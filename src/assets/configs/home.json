@@ -1,56 +1,114 @@
 [
     {
         "id": "slide-1",
-        "color": "red",
+        "color": "teal",
         "class": "slide",
         "textSize": "large-text",
         "text": "Tween-slider can be used out the box and is config driven.",
+        "firstAnimEndX": "center",
+        "firstAnimEndY": "center",
         "textSize2":"small-text",
-        "text2": "Via config, You have the option to use large-text as above or make use smaller text like this. " 
+        "text2": "Built with Angular and GSAP " ,
+        "secondAnimEndX": "end",
+        "secondAnimEndY": "center",
+        "timeToFade":"+=6"
     },
     {
         "id": "slide-2",
-        "color": "pink",
+        "color": "teal",
         "class": "slide",
         "textSize": "small-text",
-        "text": "You have the power to configure as many slides as you want via our config.",
-        "textSize2":"medium-text",
-        "text2": " At this point in time each slide is limited to 2 paragraphs, using the different styles." 
+        "text": "Use config to",
+        "firstAnimEndX": "center",
+        "firstAnimEndY": "center",
+        "textSize2":"large-text",
+        "text2": "customize your font-size" ,
+        "secondAnimEndX": "end",
+        "secondAnimEndY": "center",
+        "timeToFade":"+=5"
     },
     {
         "id": "slide-3",
-        "color": "purple",
+        "color": "blue",
         "class": "slide",
         "textSize": "small-text",
-        "text": "We have a range of properties that you can apply to your slides.",
+        "text": "...slide screens in",
+        "firstAnimEndX": "center",
+        "firstAnimEndY": "center",
         "textSize2":"medium-text",
-        "text2": "And allows for custom css to be written, if you wish to customize further." 
+        "text2": "and change slide colors" ,
+        "secondAnimEndX": "end",
+        "secondAnimEndY": "center",
+        "timeToFade":"+=5"
     },
     {
         "id": "slide-4",
-        "color": "deep-purple",
+        "color": "teal",
         "class": "slide",
         "textSize": "small-text",
-        "text": "Tween-slider makes use of Angular2 and gsap.",
+        "text": "Currently, tween-slide supports 2 paragraphs per slide",
+        "firstAnimEndX": "center",
+        "firstAnimEndY": "center",
         "textSize2":"medium-text",
-        "text2": "Enjoy!" 
+        "text2": "Various different colors, different timings and complete control of your tweening." ,
+        "secondAnimEndX": "0",
+        "secondAnimEndY": "0",
+        "timeToFade":"+=5"
     },
     {
         "id": "slide-5",
-        "color": "indigo",
+        "color": "teal",
         "class": "slide",
         "textSize": "small-text",
-        "text": "Should allow a user to change the direction of this animation",
+        "text": "Tween-slider also allows you the freedom to add custom classes to your slide.",
+        "firstAnimEndX": "center",
+        "firstAnimEndY": -100,
         "textSize2":"medium-text",
-        "text2": "Probably add some controls, and make timings configurable " 
+        "text2": "This is done by just adding a little bit of css and updating the config with the class names." ,
+        "secondAnimEndX": "center",
+        "secondAnimEndY": "center",
+        "timeToFade":"+=5"
     },
     {
         "id": "slide-6",
-        "color": "purple",
+        "color": "teal",
         "class": "slide",
-        "textSize": "small-text",
-        "text": "Will get there.",
+        "textSize": "xlarge-text",
+        "text": "3",
+        "firstAnimEndX": "center",
+        "firstAnimEndY": "center",
         "textSize2":"medium-text",
-        "text2": "Should also make this loop around instead of just disappearing like this....." 
+        "text2": "" ,
+        "secondAnimEndX": "end",
+        "secondAnimEndY": "end",
+        "timeToFade":"+=0"
+    },
+    {
+        "id": "slide-7",
+        "color": "teal",
+        "class": "slide",
+        "textSize": "xlarge-text",
+        "text": "2",
+        "firstAnimEndX": "center",
+        "firstAnimEndY": "center",
+        "textSize2":"medium-text",
+        "text2": "" ,
+        "secondAnimEndX": "100",
+        "secondAnimEndY": "50",
+        "timeToFade":"+=1"
+    },
+    {
+        "id": "slide-8",
+        "color": "teal",
+        "class": "slide",
+        "textSize": "xlarge-text",
+        "text": "1",
+        "firstAnimEndX": "center",
+        "firstAnimEndY": "center",
+        "textSize2":"medium-text",
+        "text2": "" ,
+        "secondAnimEndX": "500",
+        "secondAnimEndY": "center",
+        "timeToFade":"+=1"
     }
 ]

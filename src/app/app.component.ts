@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,17 @@ import { Component } from '@angular/core';
   providers : [] 
 })
 export class AppComponent {
-  constructor(){}
+   data : Object;
+  constructor(public http: HttpClient) { }
+
+  ngOnInit(): void {
+   
+    this.http.get('./assets/configs/home.json').subscribe(data => {
+      this.data = data;
+    });
+
+
+}
 
 }
 

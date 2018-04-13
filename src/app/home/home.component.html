@@ -1,8 +1,13 @@
-<div id="profile-component-container" class="profile-component-container" (window:resize)="handleResize();">
-    <div class="profile-component-info">
-        <div *ngFor="let profileData of this.profileData" id="{{profileData.id}}" class="{{profileData.class}}">
+
+
+
+
+    <div  class="home" (window:resize)="handleResize();">
+        <div *ngFor="let profileData of this.profileData" id="{{profileData.id}}"  class="{{profileData.class}} {{profileData.color}} ">
+            <div class="text-wrapper">
             <div class="{{profileData.textSize}}"> {{profileData.text}}</div>
             <div class="{{profileData.textSize2}}">{{profileData.text2}} </div>
+            </div>
         </div>
     </div>
-</div>
+

@@ -1,9 +1,27 @@
 
-.profile-component-container{
-    width: 300px;
-    height: 300px;
-    overflow-y: hidden;
-    opacity:1;
+
+.home{
+  margin: 0;
+}
+
+.slide {
+  overflow: hidden;
+  position:absolute;
+    display: block;
+    color:white; 
+    text-align: center;
+    width: 100%;
+    height:100%;
+    font-size: 28px;
+    opacity:0;
+}
+
+.text-wrapper{
+  position: relative;
+float: left;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 }
 
 .small-text{
@@ -20,19 +38,4 @@
 
 .large-text{
   font-size: 32px;
-}
-
-.slide {
-  overflow: hidden;
-    position: absolute;
-    display: block;
-    color:white; 
-    text-align: center;
-    width: 300px;
-    font-size: 28px;
-    opacity:0;
-}
-
-.blue{
-  background-color: #4DD0E1;
 }

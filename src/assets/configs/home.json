@@ -1,6 +1,7 @@
 [
     {
         "id": "slide-1",
+        "color": "red",
         "class": "slide",
         "textSize": "large-text",
         "text": "Tween-slider can be used out the box and is config driven.",
@@ -9,6 +10,7 @@
     },
     {
         "id": "slide-2",
+        "color": "pink",
         "class": "slide",
         "textSize": "small-text",
         "text": "You have the power to configure as many slides as you want via our config.",
@@ -17,7 +19,8 @@
     },
     {
         "id": "slide-3",
-        "class": "slide blue",
+        "color": "purple",
+        "class": "slide",
         "textSize": "small-text",
         "text": "We have a range of properties that you can apply to your slides.",
         "textSize2":"medium-text",
@@ -25,6 +28,7 @@
     },
     {
         "id": "slide-4",
+        "color": "deep-purple",
         "class": "slide",
         "textSize": "small-text",
         "text": "Tween-slider makes use of Angular2 and gsap.",
@@ -33,6 +37,7 @@
     },
     {
         "id": "slide-5",
+        "color": "indigo",
         "class": "slide",
         "textSize": "small-text",
         "text": "Should allow a user to change the direction of this animation",
@@ -41,6 +46,7 @@
     },
     {
         "id": "slide-6",
+        "color": "purple",
         "class": "slide",
         "textSize": "small-text",
         "text": "Will get there.",

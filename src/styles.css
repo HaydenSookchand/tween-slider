@@ -5,25 +5,45 @@ html, body {
   width: 100%;
 }
 
-body {
-  background-color:#448aff;
-  background-image:
-  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
-  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
-  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+.app-root{
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  background-color: #e57373;
 }
 
-#app-root{
-  width:100%;
-  height:100%
+.red{
+  background-color: #e57373;
 }
 
-#app{
-  margin-top: 155px;
+.pink{
+  background-color: #F06292;
 }
 
+.purple{
+  background-color: #BA68C8;
+}
 
+.deep-purple{
+  background-color: #9575CD;
+}
 
+.indigo{
+  background-color: #7986CB;
+}
+
+.blue{
+  background-color: #4DD0E1;
+}
+
+.teal{
+  background-color: #4DB6AC;
+}
+
+.green{
+  background-color: #81C784;
+}
+
+.light-green{
+  background-color: #AED581;
+}

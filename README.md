@@ -4,12 +4,15 @@
 
 ## Built with angular 2
 Pull Down Repo
+```
 run npm install
 run npm start
+```
 
 ## To build:
+```
 npm run build
-
+```
 
 
 

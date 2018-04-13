@@ -1,4 +1,4 @@
-# personal_website
+# Tween-slider
 
 #### Hosted on https://haydensookchand.github.io/tween-slider
 

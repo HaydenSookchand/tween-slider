@@ -1,0 +1,50 @@
+[
+    {
+        "id": "slide-1",
+        "class": "slide",
+        "textSize": "large-text",
+        "text": "Tween-slider can be used out the box and is config driven.",
+        "textSize2":"small-text",
+        "text2": "Via config, You have the option to use large-text as above or make use smaller text like this. " 
+    },
+    {
+        "id": "slide-2",
+        "class": "slide",
+        "textSize": "small-text",
+        "text": "You have the power to configure as many slides as you want via our config.",
+        "textSize2":"medium-text",
+        "text2": " At this point in time each slide is limited to 2 paragraphs, using the different styles." 
+    },
+    {
+        "id": "slide-3",
+        "class": "slide blue",
+        "textSize": "small-text",
+        "text": "We have a range of properties that you can apply to your slides.",
+        "textSize2":"medium-text",
+        "text2": "And allows for custom css to be written, if you wish to customize further." 
+    },
+    {
+        "id": "slide-4",
+        "class": "slide",
+        "textSize": "small-text",
+        "text": "Tween-slider makes use of Angular2 and gsap.",
+        "textSize2":"medium-text",
+        "text2": "Enjoy!" 
+    },
+    {
+        "id": "slide-5",
+        "class": "slide",
+        "textSize": "small-text",
+        "text": "Should allow a user to change the direction of this animation",
+        "textSize2":"medium-text",
+        "text2": "Probably add some controls, and make timings configurable " 
+    },
+    {
+        "id": "slide-6",
+        "class": "slide",
+        "textSize": "small-text",
+        "text": "Will get there.",
+        "textSize2":"medium-text",
+        "text2": "Should also make this loop around instead of just disappearing like this....." 
+    }
+]

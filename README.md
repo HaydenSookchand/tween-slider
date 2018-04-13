@@ -1,6 +1,6 @@
 # Tween-slider
 
-* **[See Demo](https://haydensookchand.github.io/tween-slider)**
+* **[See Demo](https://haydensookchand.github.io/tween-slider-demo)**
 
 ## Built with angular 2
 Pull Down Repo

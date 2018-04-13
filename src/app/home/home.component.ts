@@ -5,11 +5,11 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
   providers: []
 })
-export class ProfileComponent {
+export class HomeComponent {
   textAnimation: Object;
   items: Array<Object>
   profileData: Object;
@@ -18,7 +18,7 @@ export class ProfileComponent {
 
   ngOnInit(): void {
     // get data - maybe use a service?
-    this.http.get('./assets/configs/profile.json').subscribe(data => {
+    this.http.get('./assets/configs/home.json').subscribe(data => {
       this.profileData = data;
     });
 

@@ -4,20 +4,20 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterModule }   from '@angular/router';
-import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: '/profile', pathMatch: 'full'},   
-      { path: 'profile', component: ProfileComponent}
+      { path: '', redirectTo: '/home', pathMatch: 'full'},   
+      { path: 'home', component: HomeComponent}
     ],{useHash: true})
     
   ],

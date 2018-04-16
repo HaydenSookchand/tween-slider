@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, animate } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { TweenLite, TimelineMax } from 'gsap';
 import { HttpClient } from '@angular/common/http';
+import { MathService } from '../math.service';
 
 @Component({
   selector: 'app',
@@ -17,10 +18,13 @@ export class HomeComponent {
   yTo: Number;
   xEnd: Number;
   xPer: Number;
+  canShowPositions: Boolean;
+  tweenAnim: Object;
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, private mathService: MathService) { }
 
   ngOnInit(): void {
+    console.log(this.mathService.cars);
 
     this.http.get('./assets/configs/home.json').subscribe(data => {
       this.profileData = data;
@@ -30,13 +34,14 @@ export class HomeComponent {
     var that = this;
     setTimeout(() => {
       this.init();
-    }, 100);
+    }, 1000);
   }
 
   init() {
+    this.canShowPositions = true;
+
     this.bindToElements();
     this.setUpAnimations();
-    //this.someCalculations();
     this.playAnimations();
   }
 
@@ -44,6 +49,11 @@ export class HomeComponent {
 
   bindToElements(this) {
     this.createSlideBindings();
+    this.topLeftDiv = document.getElementById('top-left');
+    this.topRightDiv = document.getElementById('top-right');
+    this.bottomLeftDiv = document.getElementById('bottom-left');
+    this.bottomRightDiv = document.getElementById('bottom-right');
+    this.showPositions();
   }
 
   createSlideBindings(this) {
@@ -54,7 +64,7 @@ export class HomeComponent {
   }
 
   setUpAnimations() {
-    this.textAnimation = new TimelineMax({ repeat: -1 });
+    this.textAnimation = new TimelineMax({ repeat: 0 });
   }
 
   /** ***************************** Play Animations ***************************************************/
@@ -63,86 +73,68 @@ export class HomeComponent {
     this.playSlideAnimations();
   }
 
-
   playSlideAnimations(this) {
     for (var itemCounter = 0; itemCounter < this.items.length; itemCounter++) {
       this.count = itemCounter;
       this.validateAnimations(this, this.profileData[this.count]);
       this.xPercent = -50
-      this.textAnimation.fromTo(this.items[itemCounter], 1, { opacity: 0, x: 0, y: 0, xPercent: this.xPercent }, { opacity: 1, x: this.firstAnimEndX, y: this.firstAnimEndY, xPercent: this.xPercent });
-      this.textAnimation.to(this.items[itemCounter], 1, { opacity: 0, x: this.secondAnimEndX, y: this.secondAnimEndY, }, this.profileData[itemCounter].timeToFade);
+      this.textAnimation.fromTo(this.items[itemCounter], 1, { opacity: 0, x: this.tweenAnimStart.x, y: this.mathService.getYStart(), xPercent: this.xPercent }, { opacity: 1, x: this.tweenAnim.x, y: this.tweenAnim.y, xPercent: this.xPercent });
+      this.textAnimation.to(this.items[itemCounter], 1, { opacity: 0, x: this.secondtweenAnim.x, y: this.secondtweenAnim.y }, this.profileData[itemCounter].timeToFade);
     }
   }
-
-
-
-  /** ***************************** Reset Animations ***************************************************/
+  /** **************************** Reset Animations ***************************************************/
   validateAnimations(this) {
+    this.tweenAnimStart = this.profileData[this.count].firstAnimStart;
+    this.tweenAnim = this.profileData[this.count].firstAnimEnd;
+    this.secondtweenAnim = this.profileData[this.count].secondAnimEnd;
+   
 
-    // This needs to be sorted out 
+    if (this.tweenAnimStart && this.tweenAnim && this.secondtweenAnim != undefined) {
+      var tweenNames = [this.tweenAnimStart,this.tweenAnim, this.secondtweenAnim]
+      for (var tweenItem = 0; tweenItem < tweenNames.length; tweenItem++)
+        if (tweenNames[tweenItem] != undefined) {
+          switch (tweenNames[tweenItem].x) {
+            default:
+              if (tweenNames[tweenItem].x  =="firstAnimEnd"){
+              tweenNames[tweenItem].x = this.profileData[this.count].firstAnimEnd.x;
+              } else if (tweenNames[tweenItem].x  =="secondAnimEnd"){
+                tweenNames[tweenItem].x = this.profileData[this.count].secondAnimEnd.x;
+              } else if(tweenNames[tweenItem].x  =="firstAnimStart"){
+                tweenNames[tweenItem].x = this.profileData[this.count].firstAnimStart.x;
+              }
 
-    this.firstAnimEndX = this.profileData[this.count].firstAnimEndX;
-    if (this.firstAnimEndX != undefined) {
-      switch (this.firstAnimEndX) {
-        default:
-          this.firstAnimEndX = this.profileData[this.count].firstAnimEndX;
-          break;
-        case "center":
-          this.firstAnimEndX = this.getXCenter();
-          break;
-        case "end":
-          this.firstAnimEndX = this.getXEnd();
-      }
+              break;
+              case "start":
+              tweenNames[tweenItem].x = 0;
+            case "center":
+              tweenNames[tweenItem].x = this.mathService.getXCenter();
+              break;
+            case "end":
+              tweenNames[tweenItem].x = this.mathService.getXEnd();
+          }
+
+          switch (tweenNames[tweenItem].y) {       
+              default:
+              if (tweenNames[tweenItem].y  =="firstAnimEnd"){
+              tweenNames[tweenItem].y = this.profileData[this.count].firstAnimEnd.y;
+              } else if (tweenNames[tweenItem].y  =="secondAnimEnd"){
+                tweenNames[tweenItem].y = this.profileData[this.count].secondAnimEnd.y;
+              } else if(tweenNames[tweenItem].y  =="firstAnimStart"){
+                tweenNames[tweenItem].y = this.profileData[this.count].firstAnimStart.y;
+              }
+
+              break;
+              case "start":
+              tweenNames[tweenItem].y = 0;
+            case "center":
+              tweenNames[tweenItem].y = this.mathService.getYCenter();
+              break;
+            case "end":
+              tweenNames[tweenItem].y = this.mathService.getYEnd();
+          }
+        }
     }
-
-
-    this.firstAnimEndY = this.profileData[this.count].firstAnimEndY;
-    if (this.firstAnimEndY != undefined) {
-      switch (this.firstAnimEndY) {
-        default:
-          this.firstAnimEndY = this.profileData[this.count].firstAnimEndY;
-          break;
-        case "center":
-          this.firstAnimEndY = this.getYCenter();
-          break;
-        case "end":
-          this.firstAnimEndY = this.getYEnd();
-      }
-    }
-
-
-    this.secondAnimEndX = this.profileData[this.count].secondAnimEndX;
-    if (this.secondAnimEndX != undefined) {
-      switch (this.secondAnimEndX) {
-        default:
-          this.secondAnimEndX= this.profileData[this.count].secondAnimEndX;
-          break;
-        case "center":
-          this.secondAnimEndX = this.getXCenter();
-          break;
-        case "end":
-          this.secondAnimEndX = this.getXEnd();
-      }
-    }
-
-
-
-    this.secondAnimEndY = this.profileData[this.count].secondAnimEndY;
-    if (this.secondAnimEndY != undefined) {
-      switch (this.secondAnimEndY) {
-        default:
-          this.secondAnimEndY = this.profileData[this.count].secondAnimEndY;
-          break;
-        case "center":
-          this.secondAnimEndY = this.getYCenter();
-          break;
-        case "end":
-          this.secondAnimEndY = this.getYEnd();
-      }
-    }
-
   }
-
   /** ***************************** Reset Animations ***************************************************/
 
   resetSlideAnimations(this) {
@@ -159,29 +151,38 @@ export class HomeComponent {
 
   handleWindowResize(this) {
     this.textAnimation.totalProgress(1).kill();
+    this.showPositions();
+    this.setUpAnimations();  // We just Killed Animations so we need to set them up again
     this.resetAnimations();
     this.playAnimations(this);
   }
+  /** ***************************** Not sure how best to do this ***************************************************/
+  showPositions(this) {
+    if (this.canShowPositions) {
+      this.topLeftDiv.innerHTML = " y = " + 0 + " , x = " + 0;
+      this.topLeftDiv.style.left = "0px";
+      this.topLeftDiv.style.top = "0px";
+      this.topLeftDiv.style.display = "block";
 
-  // Get the point we want the first X to tween to (First Animation X End)
-  getXCenter(this) {
-    return window.innerWidth / 2;
+      this.topRightDiv.innerHTML = " y = " + 0 + " , x = " + this.mathService.getWindowWidth();
+      this.leftvalue = this.mathService.getXEnd() + 50;
+      this.topRightDiv.style.left = this.leftvalue + "px";
+      this.topRightDiv.style.top = "0px";
+      this.topRightDiv.style.display = "block";
+
+      this.bottomRightDiv.innerHTML = " y = " + this.mathService.getYEnd() + " , x = " + 0;
+      this.bottomvalue = this.mathService.getYEnd() - 100;
+      this.bottomRightDiv.style.top = this.bottomvalue + "px";
+      this.bottomRightDiv.style.left = "0px";
+      this.bottomRightDiv.style.display = "block";
+
+      this.bottomLeftDiv.innerHTML = " y = " + this.mathService.getYEnd() + " , x = " + this.mathService.getWindowWidth();
+      this.bottomvalue = this.mathService.getYEnd() - 100;
+      this.leftvalue = this.mathService.getXEnd() + 50;
+      this.bottomLeftDiv.style.top = this.bottomvalue + "px";
+      this.bottomLeftDiv.style.left = this.leftvalue + "px";
+      this.bottomLeftDiv.style.display = "block";
+    }
   }
-
-  // Get the point we want the first X to tween to (First Animation X End)
-  getYCenter(this) {
-    return 0;
-  }
-
-
-  // Second Animation X End
-  getXEnd(this) {
-    return window.innerWidth - 150;
-  }
-    // Second Animation X End
- getYEnd(this) {
-      return window.innerHeight;
-  }
-
 }
 

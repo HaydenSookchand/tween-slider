@@ -43,3 +43,16 @@
 .xlarge-text{
   font-size: 50px;
 }
+
+
+#top-left, #top-right, #bottom-right, #bottom-left{
+ position:absolute;
+  left:0px;
+  top:0px;
+  z-index:1000;
+  width:100px;
+  height:100px;;
+  background-color:#00796B;
+  display:none;
+  color:white;
+}

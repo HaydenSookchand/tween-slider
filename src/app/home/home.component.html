@@ -1,9 +1,16 @@
-    <div  class="home" (window:resize)="handleWindowResize();">
-        <div *ngFor="let profileData of this.profileData" id="{{profileData.id}}"  class="{{profileData.class}} {{profileData.color}} ">
-            <div class="text-wrapper">
+<div class="home" (window:resize)="handleWindowResize();">
+
+    <div *ngFor="let profileData of this.profileData" id="{{profileData.id}}" class="{{profileData.class}} {{profileData.color}} ">
+        <div class="text-wrapper">
             <div class="text {{profileData.textSize}}"> {{profileData.text}}</div>
             <div class="text {{profileData.textSize2}}">{{profileData.text2}} </div>
-            </div>
         </div>
     </div>
 
+    <div id="labels">
+        <div id="top-left">{{this.topLeft}}</div>
+        <div id="top-right">{{this.topRight}}</div>
+        <div id="bottom-left">{{this.bottomLeft}}</div>
+        <div id="bottom-right">{{this.bottomRight}}</div>
+    </div>
+</div>

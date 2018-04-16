@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterModule }   from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { MathService } from './math.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { HomeComponent } from './home/home.component';
     ],{useHash: true})
     
   ],
-  providers: [HttpClient],
+  providers: [HttpClient, MathService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,111 +4,65 @@
         "color": "teal",
         "class": "slide",
         "textSize": "large-text",
-        "text": "Tween-slider can be used out the box and is config driven.",
-        "firstAnimEndX": "center",
-        "firstAnimEndY": "center",
+        "text": "Start at Center , Move to center",
         "textSize2":"small-text",
-        "text2": "Built with Angular and GSAP " ,
-        "secondAnimEndX": "end",
-        "secondAnimEndY": "center",
-        "timeToFade":"+=6"
+        "text2": "Fade out at center" ,
+        "firstAnimStart":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "firstAnimEnd":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "secondAnimEnd":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "timeToFade":"+=1"
     },
     {
         "id": "slide-2",
         "color": "teal",
         "class": "slide",
-        "textSize": "small-text",
-        "text": "Use config to",
-        "firstAnimEndX": "center",
-        "firstAnimEndY": "center",
-        "textSize2":"large-text",
-        "text2": "customize your font-size" ,
-        "secondAnimEndX": "end",
-        "secondAnimEndY": "center",
-        "timeToFade":"+=5"
-    },
-    {
-        "id": "slide-3",
-        "color": "blue",
-        "class": "slide",
-        "textSize": "small-text",
-        "text": "...slide screens in",
-        "firstAnimEndX": "center",
-        "firstAnimEndY": "center",
-        "textSize2":"medium-text",
-        "text2": "and change slide colors" ,
-        "secondAnimEndX": "end",
-        "secondAnimEndY": "center",
-        "timeToFade":"+=5"
-    },
-    {
-        "id": "slide-4",
-        "color": "teal",
-        "class": "slide",
-        "textSize": "small-text",
-        "text": "Currently, tween-slide supports 2 paragraphs per slide",
-        "firstAnimEndX": "center",
-        "firstAnimEndY": "center",
-        "textSize2":"medium-text",
-        "text2": "Various different colors, different timings and complete control of your tweening." ,
-        "secondAnimEndX": "0",
-        "secondAnimEndY": "0",
-        "timeToFade":"+=5"
-    },
-    {
-        "id": "slide-5",
-        "color": "teal",
-        "class": "slide",
-        "textSize": "small-text",
-        "text": "Tween-slider also allows you the freedom to add custom classes to your slide.",
-        "firstAnimEndX": "center",
-        "firstAnimEndY": -100,
-        "textSize2":"medium-text",
-        "text2": "This is done by just adding a little bit of css and updating the config with the class names." ,
-        "secondAnimEndX": "center",
-        "secondAnimEndY": "center",
-        "timeToFade":"+=5"
-    },
-    {
-        "id": "slide-6",
-        "color": "teal",
-        "class": "slide",
-        "textSize": "xlarge-text",
-        "text": "3",
-        "firstAnimEndX": "center",
-        "firstAnimEndY": "center",
-        "textSize2":"medium-text",
-        "text2": "" ,
-        "secondAnimEndX": "end",
-        "secondAnimEndY": "end",
-        "timeToFade":"+=0"
-    },
-    {
-        "id": "slide-7",
-        "color": "teal",
-        "class": "slide",
-        "textSize": "xlarge-text",
-        "text": "2",
-        "firstAnimEndX": "center",
-        "firstAnimEndY": "center",
-        "textSize2":"medium-text",
-        "text2": "" ,
-        "secondAnimEndX": "100",
-        "secondAnimEndY": "50",
+        "textSize": "large-text",
+        "text": "Start at Start , Move to center",
+        "firstAnimStart":{
+            "x": 0 ,
+            "y": 0 
+        }, 
+        "firstAnimEnd":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "textSize2":"small-text",
+        "text2": "Move Y to End " ,
+        "secondAnimEnd":{
+            "x": "center" ,
+            "y": "end" 
+        }, 
         "timeToFade":"+=1"
     },
     {
-        "id": "slide-8",
+        "id": "slide-3",
         "color": "teal",
         "class": "slide",
-        "textSize": "xlarge-text",
-        "text": "1",
-        "firstAnimEndX": "center",
-        "firstAnimEndY": "center",
-        "textSize2":"medium-text",
-        "text2": "" ,
-        "secondAnimEndX": "500",
-        "secondAnimEndY": "center",
+        "textSize": "large-text",
+        "text": "Start at Center. Move to center",
+        "firstAnimStart":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "firstAnimEnd":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "textSize2":"small-text",
+        "text2": "Move X to End " ,
+        "secondAnimEnd":{
+            "x": "end" ,
+            "y": "center" 
+        }, 
         "timeToFade":"+=1"
     }
 ]

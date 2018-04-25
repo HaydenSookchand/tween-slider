@@ -12,12 +12,6 @@ export class AppComponent {
   constructor(public http: HttpClient) { }
 
   ngOnInit(): void {
-   
-    this.http.get('./assets/configs/home.json').subscribe(data => {
-      this.data = data;
-    });
-
-
 }
 
 }

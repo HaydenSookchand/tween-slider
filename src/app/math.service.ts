@@ -27,11 +27,11 @@ export class MathService {
   }
 
   getYCenter(this) {
-    return 0;
+    return window.innerHeight/ 2;
   }
 
   getXEnd(this) {
-    return window.innerWidth - 150;
+    return window.innerWidth -150;
   }
 
  getYEnd(this) {

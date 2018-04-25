@@ -1,0 +1,67 @@
+[
+    {
+        "id": "slide-1",
+        "color": "red",
+        "class": "slide",
+        "textWrapperId" : "textwrapper-1",
+        "textSize": "large-text",
+        "text": "Tween-slider can be used out the box and is config driven.",
+        "textSize2":"small-text",
+        "text2": "Built with Angular and GSAP " ,
+        "slideStart":{
+            "x": 0 ,
+            "y": 0 
+        }, 
+        "slidePause":{
+            "x":"center" ,
+            "y":0 
+        }, 
+        "slideEnd":{
+            "x": "center" ,
+            "y": "end"
+        }, 
+        "textIn":{
+            "x": "center" ,
+            "y": "end"
+        }, 
+        "textOut":{
+            "x": "center" ,
+            "y": "end"
+        }, 
+
+        "timeToFade":"+=5"
+    },
+    {
+        "id": "slide-2",
+        "color": "green",
+        "class": "slide",
+        "textWrapperId" : "textwrapper-2",
+        "textSize": "large-text",
+        "text": "Slide 2",
+        "textSize2":"small-text",
+        "text2": "Text goes here " ,
+        "slideStart":{
+            "x": 0 ,
+            "y": 0 
+        }, 
+        "slidePause":{
+            "x":"center" ,
+            "y":0 
+        }, 
+        "slideEnd":{
+            "x": "center" ,
+            "y": "end"
+        }, 
+        "textIn":{
+            "x": "center" ,
+            "y": "end"
+        }, 
+        "textOut":{
+            "x": "center" ,
+            "y": "end"
+        }, 
+
+        "timeToFade":"+=5"
+    }
+  
+]

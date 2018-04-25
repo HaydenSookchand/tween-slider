@@ -1,0 +1,115 @@
+[
+    {
+        "id": "slide-1",
+        "color": "teal",
+        "class": "slide",
+        "textSize": "large-text",
+        "text": "Start at Zero , Move to center",
+        "textSize2":"small-text",
+        "text2": "Move to End" ,
+        "firstAnimStart":{
+            "x": 0 ,
+            "y": 0 
+        }, 
+        "firstAnimEnd":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "secondAnimEnd":{
+            "x": "end" ,
+            "y": "end"
+        }, 
+        "timeToFade":"+=3"
+    },
+    {
+        "id": "slide-2",
+        "color": "teal",
+        "class": "slide",
+        "textSize": "large-text",
+        "text": "Start at Zero , Move to center",
+        "textSize2":"small-text",
+        "text2": "Move to End" ,
+        "firstAnimStart":{
+            "x": 0 ,
+            "y": 0 
+        }, 
+        "firstAnimEnd":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "secondAnimEnd":{
+            "x": 0 ,
+            "y": 0
+        }, 
+        "timeToFade":"+=3"
+    },
+    {
+        "id": "slide-3",
+        "color": "teal",
+        "class": "slide",
+        "textSize": "large-text",
+        "text": "Start at Zero , Move to center",
+        "textSize2":"small-text",
+        "text2": "Move to End" ,
+        "firstAnimStart":{
+            "x": 0 ,
+            "y": 0 
+        }, 
+        "firstAnimEnd":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "secondAnimEnd":{
+            "x": 0 ,
+            "y": "end"
+        }, 
+        "timeToFade":"+=3"
+    },
+    {
+        "id": "slide-4",
+        "color": "teal",
+        "class": "slide",
+        "textSize": "large-text",
+        "text": "Start at Zero , Move to center",
+        "textSize2":"small-text",
+        "text2": "Move to End" ,
+        "firstAnimStart":{
+            "x": 0 ,
+            "y": 0 
+        }, 
+        "firstAnimEnd":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "secondAnimEnd":{
+            "x": "end" ,
+            "y": 0
+        }, 
+        "timeToFade":"+=3"
+    },
+    {
+        "id": "slide-5",
+        "color": "teal",
+        "class": "slide",
+        "textSize": "large-text",
+        "text": "Start at Zero , Move to center",
+        "textSize2":"small-text",
+        "text2": "Move to End" ,
+        "firstAnimStart":{
+            "x": "end" ,
+            "y": 0 
+        }, 
+        "firstAnimEnd":{
+            "x": "center" ,
+            "y": "center" 
+        }, 
+        "secondAnimEnd":{
+            "x": 0 ,
+            "y": "end"
+        }, 
+        "timeToFade":"+=3"
+    }
+
+
+
+]

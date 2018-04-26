@@ -1,67 +1,219 @@
 [
     {
         "id": "slide-1",
-        "color": "red",
+        "color": "teal",
         "class": "slide",
-        "textWrapperId" : "textwrapper-1",
-        "textSize": "large-text",
-        "text": "Tween-slider can be used out the box and is config driven.",
-        "textSize2":"small-text",
-        "text2": "Built with Angular and GSAP " ,
-        "slideStart":{
-            "x": 0 ,
-            "y": 0 
-        }, 
-        "slidePause":{
-            "x":"center" ,
-            "y":0 
-        }, 
-        "slideEnd":{
-            "x": "center" ,
+        "textWrapperId": "textwrapper-1",
+        "textSize": "xlarge-text",
+        "text": "Tween-slider",
+        "textSize2": "large-text",
+        "text2": "Built with Angular and GSAP ",
+        "slideStart": {
+            "x": 0,
+            "y": 0
+        },
+        "slidePause": {
+            "x": "center",
+            "y": 0
+        },
+        "slideEnd": {
+            "x": 0,
             "y": "end"
-        }, 
-        "textIn":{
-            "x": "center" ,
+        },
+        "textIn": {
+            "x": "center",
             "y": "end"
-        }, 
-        "textOut":{
-            "x": "center" ,
-            "y": "end"
-        }, 
-
-        "timeToFade":"+=5"
+        },
+        "textOut": {
+            "x": "50",
+            "y": "400"
+        },
+        "timeToFade": "+=5"
     },
     {
         "id": "slide-2",
-        "color": "green",
+        "color": "teal",
         "class": "slide",
-        "textWrapperId" : "textwrapper-2",
+        "textWrapperId": "textwrapper-2",
         "textSize": "large-text",
-        "text": "Slide 2",
-        "textSize2":"small-text",
-        "text2": "Text goes here " ,
-        "slideStart":{
-            "x": 0 ,
-            "y": 0 
-        }, 
-        "slidePause":{
-            "x":"center" ,
-            "y":0 
-        }, 
-        "slideEnd":{
-            "x": "center" ,
+        "text": "Tween-slider is a config driven presentation framework",
+        "textSize2": "small-text",
+        "text2": "Using Tween-slider you have the ability create an online slideshow by just updating a few config values....",
+        "slideStart": {
+            "x": 0,
+            "y": 0
+        },
+        "slidePause": {
+            "x": "center",
+            "y": 0
+        },
+        "slideEnd": {
+            "x": "end",
+            "y": 0
+        },
+        "textIn": {
+            "x": "center",
             "y": "end"
-        }, 
-        "textIn":{
-            "x": "center" ,
+        },
+        "textOut": {
+            "x": "200",
+            "y": "150"
+        },
+        "timeToFade": "+=5"
+    },
+    {
+        "id": "slide-3",
+        "color": "blue",
+        "class": "slide",
+        "textWrapperId": "textwrapper-3",
+        "textSize": "large-text",
+        "text": "Via config you have the option to choose from various text sizes.",
+        "textSize2": "small-text",
+        "text2": "You can also create as many slides as you desire",
+        "slideStart": {
+            "x": 0,
+            "y": 0
+        },
+        "slidePause": {
+            "x": "center",
+            "y": 0
+        },
+        "slideEnd": {
+            "x": "end",
             "y": "end"
-        }, 
-        "textOut":{
-            "x": "center" ,
+        },
+        "textIn": {
+            "x": "center",
             "y": "end"
-        }, 
-
-        "timeToFade":"+=5"
+        },
+        "textOut": {
+            "x": "200",
+            "y": "150"
+        },
+        "timeToFade": "+=5"
+    },
+    {
+        "id": "slide-4",
+        "color": "red",
+        "class": "slide",
+        "textWrapperId": "textwrapper-4",
+        "textSize": "large-text",
+        "text": "We have a range of properties that you can apply to your slides",
+        "textSize2": "small-text",
+        "text2": "You have the ability to add more styles via CSS if you desire",
+        "slideStart": {
+            "x": 0,
+            "y": 0
+        },
+        "slidePause": {
+            "x": 100,
+            "y": 0
+        },
+        "slideEnd": {
+            "x": "end",
+            "y": "end"
+        },
+        "textIn": {
+            "x": "center",
+            "y": "end"
+        },
+        "textOut": {
+            "x": "200",
+            "y": "350"
+        },
+        "timeToFade": "+=5"
+    },
+    {
+        "id": "slide-5",
+        "color": "teal",
+        "class": "slide",
+        "textWrapperId": "textwrapper-5",
+        "textSize": "large-text",
+        "text": "You have the ability to control timings",
+        "textSize2": "small-text",
+        "text2": "between transitions and of each animation",
+        "slideStart": {
+            "x": 0,
+            "y": 0
+        },
+        "slidePause": {
+            "x": 100,
+            "y": 0
+        },
+        "slideEnd": {
+            "x": "end",
+            "y": "end"
+        },
+        "textIn": {
+            "x": "center",
+            "y": "end"
+        },
+        "textOut": {
+            "x": "200",
+            "y": "350"
+        },
+        "timeToFade": "+=5"
+    },
+    {
+        "id": "slide-6",
+        "color": "teal",
+        "class": "slide",
+        "textWrapperId": "textwrapper-6",
+        "textSize": "large-text",
+        "text": "Currently a window resize ",
+        "textSize2": "small-text",
+        "text2": "will restart the slideshow",
+        "slideStart": {
+            "x": 0,
+            "y": 0
+        },
+        "slidePause": {
+            "x": 100,
+            "y": 0
+        },
+        "slideEnd": {
+            "x": "end",
+            "y": "end"
+        },
+        "textIn": {
+            "x": "center",
+            "y": "end"
+        },
+        "textOut": {
+            "x": "200",
+            "y": "350"
+        },
+        "timeToFade": "+=5"
+    },
+    {
+        "id": "slide-7",
+        "color": "teal",
+        "class": "slide",
+        "textWrapperId": "textwrapper-7",
+        "textSize": "large-text",
+        "text": "We are constantly working on increasing our functionality",
+        "textSize2": "small-text",
+        "text2": "",
+        "slideStart": {
+            "x": 0,
+            "y": 0
+        },
+        "slidePause": {
+            "x": 100,
+            "y": 0
+        },
+        "slideEnd": {
+            "x": "end",
+            "y": "end"
+        },
+        "textIn": {
+            "x": "center",
+            "y": "end"
+        },
+        "textOut": {
+            "x": "200",
+            "y": "350"
+        },
+        "timeToFade": "+=5"
     }
-  
 ]

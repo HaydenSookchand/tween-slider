@@ -63,7 +63,7 @@ export class HomeComponent {
   }
 
   setUpAnimations() {
-    this.slideAnimation = new TimelineMax({ repeat: 0 });
+    this.slideAnimation = new TimelineMax({ repeat: -1 });
     this.textAnimation = new TimelineMax({ repeat: 0 });
   }
 
@@ -73,18 +73,14 @@ export class HomeComponent {
     this.playSlideAnimations();
   }
 
-  /* 
-  Plays Actual Slide Animations
-  Plays Text Animations
-  */
-
   playSlideAnimations(this) {
     for (var itemCounter = 0; itemCounter < this.slides.length; itemCounter++) {
       this.count = itemCounter;
       this.validateAnimations(this, this.slideData[this.count]);
       this.slideAnimation.fromTo(this.slides[itemCounter], 1, { opacity: 0, x: -50, y: this.slideAnimStart.y }, { opacity: 1, x: 0, y: this.slideAnimPause.y });
-      this.textAnimation.fromTo(this.textWrappers[itemCounter], 10, { opacity: 0, x: 0, y: 0 }, { opacity: 1, x: 50, y: 0 }, +2);
+      this.textAnimation.fromTo(this.textWrappers[itemCounter], 2, { opacity: 0, x: 0, y: 0 }, { opacity: 1, x: this.mathService.getXTextCenter(), y: this.mathService.getYTextCenter() }, +2);
       this.slideAnimation.to(this.slides[itemCounter], 1, { opacity: 0, x: this.slideAnimEnd.x, y: this.slideAnimEnd.y }, this.slideData[itemCounter].timeToFade);
+      this.resetSlide();
     }
   }
   /** **************************** Reset Animations ***************************************************/
@@ -94,6 +90,8 @@ export class HomeComponent {
     this.slideAnimStart = this.slideData[this.count].slideStart;
     this.slideAnimPause = this.slideData[this.count].slidePause;
     this.slideAnimEnd = this.slideData[this.count].slideEnd;
+    this.textOutX = this.slideData[this.count].textOut.x;
+    this.textOutY = this.slideData[this.count].textOut.y;
 
     if (this.slideAnimStart && this.slideAnimPause && this.slideAnimEnd != undefined) {
       var tweenNames = [this.slideAnimStart, this.slideAnimPause, this.slideAnimEnd]
@@ -150,23 +148,27 @@ export class HomeComponent {
     this.resetSlideAnimations(this);
   }
 
+  resetSlide() {
+    var slide = document.getElementsByClassName('slide') as HTMLCollectionOf<HTMLElement>;;
+    slide[0].style.width = "100%";
+    slide[0].style.height = "100%";
+  }
+
   /** ***************************** Reset Animations ***************************************************/
 
   handleWindowResize(this) {
-    this.slideAnimation.totalProgress(1).kill();
     var that = this;
-
     setTimeout(function () {
-      //reset width and height of slide
-      var slide = document.getElementsByClassName('slide');
-      // slide[0].style.width = "100%";
-      // slide[0].style.height = "100%";
+      that.slideAnimation.totalProgress(1).kill();
+      that.textAnimation.totalProgress(1).kill();
 
+  
+      that.resetSlide();
       that.dimensionService.showOverlay();
       that.setUpAnimations();
       that.resetAnimations();
       that.playAnimations(that);
-    }, 200);
+    }, 400);
 
   }
 }

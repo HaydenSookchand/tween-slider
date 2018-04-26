@@ -1,4 +1,9 @@
 
+#home{
+  width:100%;
+  height:100%;
+  overflow: hidden;
+}
 
 .slide {
   overflow: hidden;
@@ -15,31 +20,14 @@
 .text-wrapper{
   opacity:0;
   position: absolute;
-  width:80%;
-  height:40%
+  width:70%;
+  height:70%;
+  background-color:salmon;
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 80px; 
 }
-
-
-.small-text{
-  font-size: 22px;
-}
-
-.small-mid-text{
-  font-size: 25px;
-}
-
-.medium-text{
-  font-size: 28px;
-}
-
-.large-text{
-  font-size: 34px;
-}
-
-.xlarge-text{
-  font-size: 50px;
-}
-
 
 #top-left, #top-right, #bottom-right, #bottom-left{
  position:absolute;

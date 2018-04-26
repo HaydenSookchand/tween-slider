@@ -5,16 +5,7 @@ export class MathService {
 
   constructor() { }
 
-  cars = [
-    'Ford','Chevrolet','Buick'
-  ];
-
-
-  myData() {
-    return 'This is my data, man!';
-  }
-   
-   getXStart(this) {
+  getXStart(this) {
     return 0;
   }
 
@@ -27,22 +18,36 @@ export class MathService {
   }
 
   getYCenter(this) {
-    return window.innerHeight/ 2;
+    return window.innerHeight / 2;
+  }
+
+  getXTextCenter(this) {
+    var screen = window.innerWidth;
+    var textBox = (window.innerWidth * 0.7);
+    var textBoxCenterX = (screen - textBox) / 2;
+    return textBoxCenterX;
+  }
+
+  getYTextCenter(this) {
+    var screen = window.innerHeight;
+    var textBox = (window.innerHeight * 0.7);
+    var textBoxCenterY =  (screen - textBox) / 2 ;
+    return textBoxCenterY;
   }
 
   getXEnd(this) {
-    return window.innerWidth -150;
+    return window.innerWidth - 150;
   }
 
- getYEnd(this) {
-      return window.innerHeight;
+  getYEnd(this) {
+    return window.innerHeight;
   }
 
-  getWindowWidth(){
+  getWindowWidth() {
     return window.innerWidth;
   }
 
-  getWindowHeight(){
+  getWindowHeight() {
     return window.innerHeight;
   }
 
